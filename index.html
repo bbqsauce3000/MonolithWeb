@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="v86.js"></script>
+</head>
+<body>
+    <div id="screen" style="width:800px; height:600px;"></div>
+    <style>
+        body {
+            background: #000;
+            color: #ccc;
+            margin: 0;
+            font-family: Consolas, monospace;
+        }
+
+        #screen {
+            width: 800px;
+            height: 600px;
+            border: 2px solid #333;
+            background: #000;
+            image-rendering: pixelated;
+            margin: 20px auto;
+        }
+    </style>
+
+    <script>
+        var emulator = new V86({
+            wasm_path: "v86.wasm",
+            memory_size: 128 * 1024 * 1024,
+            vga_memory_size: 8 * 1024 * 1024,
+            screen_container: document.getElementById("screen"),
+
+            bios: { url: "seabios.bin" },
+            vga_bios: { url: "vgabios.bin" },
+
+            cdrom: { url: "monolith.iso" },
+
+            autostart: true
+        });
+    </script>
+</body>
+</html>
