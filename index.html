@@ -3,9 +3,7 @@
 <head>
     <meta charset="utf-8">
     <script src="v86.js"></script>
-</head>
-<body>
-    <div id="screen" style="width:800px; height:600px;"></div>
+
     <style>
         body {
             background: #000;
@@ -22,7 +20,42 @@
             image-rendering: pixelated;
             margin: 20px auto;
         }
+
+        #banner {
+            text-align: center;
+            color: #ccc;
+            font-family: Consolas, monospace;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        #banner a {
+            color: #0f0;
+            text-decoration: none;
+        }
+
+        #banner a:hover {
+            text-decoration: underline;
+        }
+        #container {
+            width: 800px;
+            margin: 20px auto;
+        }
+
+
     </style>
+</head>
+<body>
+    <div id="banner">
+        Made with v86!<br>
+        If it stays blank for a second, it's just loading!<br><br>
+        Check out the repo for Monolith 
+        <a href="https://github.com/bbqsauce3000/Monolith" target="_blank">here</a>, 
+        and the v86 website 
+        <a href="https://copy.sh/v86/" target="_blank">here</a>!
+    </div>
+
+    <div id="screen"></div>
 
     <script>
         var emulator = new V86({
